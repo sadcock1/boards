@@ -1,0 +1,10 @@
+node_modules
+dist
+data
+.claude
+*.db*
+.env
+.env.*
+.git
+scripts/deploy.env
+DEPLOY.local.md

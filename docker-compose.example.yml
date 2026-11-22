@@ -1,0 +1,18 @@
+# Example: run Boards with Docker Compose. Copy to docker-compose.yml and adjust.
+# Settings (admin, email) go in a .env file next to this one: see .env.example
+services:
+  boards:
+    build: .
+    container_name: boards
+    restart: unless-stopped
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      DB_FILE: /data/board.db
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/data
